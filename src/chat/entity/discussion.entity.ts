@@ -1,5 +1,4 @@
 import { Request } from 'src/services/entity/request.entity';
-import { Service } from 'src/services/entity/service.entity';
 import { Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Message } from './message.entity';
 
