@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Service } from './service.entity';
 
 @Entity()
 export class Request {
@@ -22,6 +23,6 @@ export class Request {
   @ManyToOne(() => User, (user) => user.sentRequests)
   sender: User;
 
-  @ManyToOne(() => User)
-  owner: User;
+  @ManyToOne(() => Service)
+  service: Service;
 }
