@@ -1,13 +1,15 @@
+import { User } from 'src/users/entity/user.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
-export class Item {
+export class Service {
   @PrimaryColumn()
   id: number;
 
@@ -28,4 +30,7 @@ export class Item {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ManyToOne(() => User, (user) => user.services)
+  owner: User;
 }
